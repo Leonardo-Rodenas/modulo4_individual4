@@ -1,13 +1,37 @@
+from models.info_trabajo import inicio
 from models.persona import Persona
 from models.cliente import Cliente
 from models.vendedor import Vendedor
 from models.proveedor import Proveedor
 from models.repartidor import Repartidor
 from models.reponedor import Reponedor
+from models.reponedor_Interno import ReponedorInterno
+from models.reponedor_externo import ReponedorExterno
+
+inicio()
 
 #instancias de clase persona
 persona1 = Persona("Bernardo", "Cortez", "17.236.459-8")
 persona1.presentarse_a_trabajar()
+print()
+
+# Instancias y prueba de métodos para la clase reponedor
+reponedor1 = Reponedor("Guillermo", "Perez", "18.456.789-3", "id_repo01", 25, "Te lo Vendo")
+reponedor2 = Reponedor("Mateo", "Castillo", "15.789.456-5", "id_repo02", 36, "Te lo Vendo")
+reponedor1.presentarse_a_trabajar()
+print()
+reponedor2.presentarse_a_trabajar()
+
+# Instancias y prueba de métodos para la clase ReponedorInterno
+reponedorInterno = ReponedorInterno("Bernardo", "Cortez", "17.236.459-8", "rep_int_007", 35, "Te lo Vendo", "Interno", "Sala de Ventas")
+print()
+reponedorInterno.externo_o_interno()
+print()
+
+# Instancias y prueba de métodos para la clase ReponedorExterno
+reponedorExterno = ReponedorExterno("Víctor", "Soto", "15.063.229-5", "rep_ext_012", 40, "Phillips", "Externo", "Nocturno")
+reponedorExterno.externo_o_interno()
+print()
 
 # Instancias y prueba de métodos para la clase cliente
 cliente1 = Cliente(nombre="Juan", apellido="Soto", rut="12345678-9")
@@ -66,8 +90,4 @@ print()
 repartidor1.entregar_pedido()
 repartidor2.entregar_pedido()
 
-# Instancias y prueba de métodos para la clase reponedor
-reponedor1 = Reponedor("Guillermo", "Perez", "18.456.789-3", "id_repo01", 25, "Te lo Vendo")
-reponedor2 = Reponedor("Mateo", "Castillo", "15.789.456-5", "id_repo02", 36, "Te lo Vendo")
-reponedor1.presentarse_a_trabajar()
-reponedor2.presentarse_a_trabajar()
+

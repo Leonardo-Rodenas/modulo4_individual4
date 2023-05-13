@@ -1,5 +1,5 @@
 import random
-from persona import Persona
+from .persona import Persona
 
 class Reponedor(Persona):
     id_reponedor:str
